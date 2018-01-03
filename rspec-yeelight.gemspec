@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "rspec/yeelight/version"
+require "yeelight_formatter"
 
 Gem::Specification.new do |spec|
   spec.name          = "rspec-yeelight"
-  spec.version       = Rspec::Yeelight::VERSION
+  spec.version       = YeelightFormatter::VERSION
   spec.authors       = ["Anton Davydov"]
   spec.email         = ["antondavydov.o@gmail.com"]
 
@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "rspec"
+  spec.add_dependency "rspec-core", '3.7.1'
   spec.add_dependency "yeelight-lamp-client"
 
   spec.add_development_dependency "bundler", "~> 1.16"
